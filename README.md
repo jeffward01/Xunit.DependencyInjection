@@ -221,3 +221,15 @@ TracerProviderBuilder builder;
 
 builder.AddSource("Xunit.DependencyInjection");
 ```
+
+## How to add `[SkippableFact]`
+
+1. Install the nuget package `XUnit.DependencyInjection.SkippableFact`
+2. Add this line of coode to your `Startup` class in your test assembly --> `services.AddSkippableFactSupport()` will need to be invoked. [Source - Issue](https://github.com/pengweiqhca/Xunit.DependencyInjection/issues/46#issuecomment-908851546)
+``` C#
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services) => services.AddSkippableFactSupport();
+}
+```
+
